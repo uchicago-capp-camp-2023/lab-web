@@ -7,7 +7,7 @@ has_children: true
 
 # Git Part I: Introduction to Git
 
-Git is a system used for developing software in a group. In a nutshell, Git is a _version control system_ that maintains files in a _repository_ that contains not just files, but also a record of all the changes made to those files. Git tracks every version of a file or directory using _commits_. When you have made changes to one or more files, you can logically group those changes into a “commit” that gets added to your repository. You can think of commits as “checkpoints” in your work, representing the work you’ve done since the previous checkpoint. This mechanism makes it possible to look at and even revert to older versions of a file by going back to your code as it was when you “checkpointed” it with a commit.
+Git is a system used for developing software in a group. In short, Git is a _version control system_ that maintains files in a _repository_ that contains not just files, but also a record of all the changes made to those files. Git tracks every version of a file or directory using _commits_. When you have made changes to one or more files, you can logically group those changes into a “commit” that gets added to your repository. You can think of commits as “checkpoints” in your work, representing the work you’ve done since the previous checkpoint. This mechanism makes it possible to look at and even revert to older versions of a file by going back to your code as it was when you “checkpointed” it with a commit.
 
 You will each have a set of personal Git _repositories_, one per assignment, that will be hosted on a central server.
 

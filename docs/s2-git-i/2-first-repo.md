@@ -7,13 +7,13 @@ parent: Git I
 
 # Creating your first repository
 
-For each assignment in CAPP 30121, we will provide you with an _invitation URL_ that will allow you to sign up for the assignment on GitHub and which will result in the creation of a repository called `XX-GITHUB_USERNAME` inside our `uchicago-capp-camp-2023` organization. For example, if your GitHub username is `jrandom` and XX is `camp-1`, your repository will be called `camp-1-jrandom`. This repository will be private, and can be viewed only by you and the CAPP 30121 course staff.
+For each assignment in CAPP 30121, we will provide you with an _invitation URL_ that will allow you to sign up for the assignment on GitHub and which will result in the creation of a repository called `XX-GITHUB_USERNAME` inside our `uchicago-capp-camp-2023` [organization](https://github.com/uchicago-capp-camp-2023). For example, if your GitHub username is `jrandom` and XX is `capp-camp`, your repository will be called `capp-camp-jrandom`. This repository will be private, and can be viewed only by you and the CAPP 30121 course staff.
 
 ## Accepting the GitHub Classroom assignment
 
-For this lab, use the [camp-1 URL](https://edstem.org/us/courses/42535/discussion/3322668) that we supplied on Ed. When you open the invitation URL in a browser tab, you will have to complete the following steps:
+For this lab, use the [Git I assignment URL](https://canvas.uchicago.edu/courses/50967/modules/items/2113117) that we published on Canvas. When you open the invitation URL in a browser tab, you will have to complete the following steps:
 
-1.  You will need to select your CnetID from a list. This step will allow us to know what student is associated with each GitHub account. This step is only done for the very first assignment invitation you accept.
+1.  You will need to select your UChicago email from a list. This step will allow us to know what student is associated with each GitHub account. This step is only done for the very first assignment invitation you accept.
 
    ![Screenshot of GitHub Classroom's Assignment Invitation Page](../assets/img/github-classroom-assignment-invitation.png)
 
@@ -28,7 +28,7 @@ If you run into any issues, please ask for help.
 
 You will start by initializing your repository. Your repository is hosted on GitHub, but you can create a local copy in your home directory on the Linux servers (we will refer to this as your _local repository_).
 
-Log into [GitHub](https://github.com/). Your homework repository, `uchicago-capp-camp-2023/camp-1-GITHUB_USERNAME` should appear under “Recent Repositories” on the left side of the page. (If you don’t see a list of repositories on the left side of the page, try clicking on the GitHub Cat logo.)
+Log into [GitHub](https://github.com/). Your homework repository, `uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}` should appear under “Recent Repositories” on the left side of the page. (If you don’t see a list of repositories on the left side of the page, try clicking on the GitHub Cat logo.)
 
 ![Screenshot of GitHub's home page](../assets/img/git-hub-recent-repos-image.png)
 
@@ -38,11 +38,11 @@ Clicking on the repository's name will take you to a page where you can browse y
 
     ```
     cd
-    mkdir -p capp30121/camp-1-GITHUB-USERNAME
-    cd capp30121/camp-1-GITHUB-USERNAME
+    mkdir -p capp30121/git-i-{GITHUB_USERNAME}
+    cd capp30121/git-i-{GITHUB_USERNAME}
     ```
 
-    replacing GITHUB-USERNAME with your GitHub username. (The `-p` flag to mkdir will create all the parent directories if needed; i.e., if you don’t already have a `capp30121` directory it will create one, and then will create a `camp-1-GITHUB_USERNAME` directory inside it).
+    replacing `{GITHUB_USERNAME}` with your actual GitHub username. (The `-p` flag to mkdir will create all the parent directories if needed; i.e., if you don’t already have a `capp30121` directory it will create one, and then will create a `git-i-{GITHUB_USERNAME}` directory inside it).
 
  - Navigate to the folder you just created, create a file called `README.md`, and add your full name to the file using an editor.
  
@@ -62,14 +62,14 @@ Clicking on the repository's name will take you to a page where you can browse y
     >
     > To open a new terminal in VSCode, select “Terminal > New Terminal” on the Menu Bar. The terminal that appears will use the default shell (i.e., bash for Linux). You can see the terminal listed according to its shell name on the righthand side of the terminal panel.
 
- - Run the commands below replacing `GITHUB_USERNAME` in the fifth command with your GitHub username. We encourage you to run these commands one at a time and to only move on to the next command when you are sure the first one succeeded.
+ - Run the commands below replacing `{GITHUB_USERNAME}` in the fifth command with your GitHub username. We encourage you to run these commands one at a time and to only move on to the next command when you are sure the first one succeeded.
 
     ```         
     git init
     git add README.md
     git commit -m "first commit"
     git branch -M main
-    git remote add origin git@github.com:uchicago-capp-camp-2023/camp-1-GITHUB_USERNAME.git
+    git remote add origin git@github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
     git push -u origin main
     ```
 

@@ -9,7 +9,7 @@ parent: Git I
 
  1. In the `test.txt` file, add a new line with the text `Definitely the last change!`. Add and create a commit with the change to `test.txt` with the commit message `final changes to test.txt` and push to GitHub. Check the GitHub website to ensure that your changes appear there.
 
- 2. Create a new file in your `camp-1-GITHUB-USERNAME` directory called `favorite-things.txt`. Add text to this file to list a few of your favorite things (three is enough). Now, add an additional line of text to the `README.md` that says `Definitely the last change!`. Commit *only* the changes that you made to `README.md`. Use `git commit` without the `-m` flag and use the text editor that Git opens for you to add a multi-line commit message that says:
+ 2. Create a new file in your `git-i-{GITHUB_USERNAME}` directory called `favorite-things.txt`. Add text to this file to list a few of your favorite things (three is enough). Now, add an additional line of text to the `README.md` that says `Definitely the last change!`. Commit *only* the changes that you made to `README.md`. Use `git commit` without the `-m` flag and use the text editor that Git opens for you to add a multi-line commit message that says:
 
     ```    
     final changes to README.md

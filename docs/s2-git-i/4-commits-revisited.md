@@ -40,7 +40,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 Notice that there are two types of files listed here:
 
-- `Changes not staged for commit`: This is a list of files that Git knows about and have been modified since your last commit, but which have not been added to a commit (with `git add`). Note that we _did_ use `git add` previously with `README.md` (which is why Git is “tracking” that file), but we have not run `git add` since our last commit, which means the change we made to `README.md` is not currently scheduled to be included in any commit. Remember: **committing is a two-step process** (you `git add` the files that will be part of the commit, and then you create the commit (`git commit`)).
+- `Changes not staged for commit`: This is a list of files that Git knows about and have been modified since your last commit, but which have not been added to a commit (with `git add`). Note that we _did_ use `git add` previously with `README.md` (which is why Git is “tracking” that file), but we have not run `git add` since our last commit, which means the last change we made to `README.md` is not currently scheduled to be included in any commit. Remember: **committing is a two-step process** (you `git add` the files that will be part of the commit, and then you create the commit (`git commit`)).
     
 - `Untracked files`: This is a list of files that Git has found in the same directory as your repository, but which Git isn’t tracking.
 
@@ -198,7 +198,7 @@ Compressing objects: 100% (6/6), done.
 Writing objects: 100% (8/8), 728 bytes | 728.00 KiB/s, done.
 Total 8 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-To github.com:uchicago-capp-camp-2023/camp-1-GITHUB_USERNAME.git
+To github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
     0c85752..e3f9ef1  main -> main
 ```
 

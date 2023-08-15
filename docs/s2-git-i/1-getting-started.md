@@ -7,7 +7,7 @@ parent: Git I
 
 # Getting started
 
-We have supplied [two URLs on Ed](https://edstem.org/us/courses/42535/discussion/3322668) that you will need as you work through this lab. Please open a browser and log into the Ed site to have access to these links.
+We have supplied [a URL on Canvas](https://canvas.uchicago.edu/courses/50967/modules) under the **Workshop 2 - Introduction to Git** that you will need as you work through this lab. Please open a browser and log into the Canvas CAPP Camp site to have access to this link.
 
 For each assignment, a Git repository will be created for you on [GitHub](https://github.com/), a web-based hosting service for Git repositories. However, before that repository can be created for you, you need to have a GitHub account. If you do not yet have one, you can get an account here: [https://github.com/join](https://github.com/join).
 
@@ -17,22 +17,25 @@ Once you create your account, you may want to get the [Student Developer Pack](h
 ## Joining the uchicago-capp-camp-2023 organization
 
 We will be using GitHub Classroom and have created a GitHub organization (`uchicago-capp-camp-2023`) for the course (a GitHub “organization” is basically a way to group together related repositories). You should have received an email to your UChicago email account with an invitation to join the organization. If you have already accepted the invitation, then you can move on to the next section. If you have not accepted the invitation, please locate the invitation email in your UChicago email account and follow the instructions.
-s
+
 ## Using Git with SSH
 
 When you log into the GitHub website, you will use the username and password associated with your GitHub account. However, when using Git commands from the terminal, things are a bit different. In particular, GitHub uses two mechanisms for authenticating yourself from the terminal: Personal Access Tokens and SSH Keys. We will use SSH keys to authenticate from the terminal. This section contains the information necessary to set up Git with SSH on the departmental Linux servers.
 
 ### Creating an SSH Key
 
-In the Linux lab, you should have generated an SSH key on your personal computer to access the Linux servers hosted by the Computer Science department. We will skip the details of what an SSH key is here. You can go back and review the [Linux lab](../s1-linux/1-connect.html) if you need to refresh the concepts again. Here, we will be using the same general process.
+In the Linux lab, you should have generated an SSH key on your personal computer to access the Linux servers hosted by the Computer Science department. We will skip the details of SSH keys for now, as you can go back and review the [Linux lab](../s1-linux/1-connect.html) if you need to refresh the concepts again. Here, we will be using the same general process.
 
 We will generate a *new* SSH key to access GitHub servers from the CS Linux servers. Once you have logged in to your assigned Linux server, make sure you are in your home directory.
 
 ```
 $ cd
 $ pwd
-/home/CNET_ID
+/home/{CNET_ID}
 ```
+
+{: .note}
+When you see curly braces (`{}`) around characters in a code block, such as in the code block above (`{CNET_ID}`), you must replace the characters inside the braces with your own personal information. So, for example, if you are instructed in this lab to run the following command, `cd /home/{CNET_ID}`, and your CNET ID is jsmith1, then the actual command you should run is `cd /home/jsmith1`, NOT `cd /home/{CNET_ID}` or `cd /home/{jsmith1}`. You will see similar syntax used when we start working with Git (e.g., `git clone uchicago-capp-camp-2023/camp-1-{GITHUB_USERNAME}`). As with the CNET ID example, you will replace `{GITHUB_USERNAME}` with your own GitHub username.
 
 As you did previously, to create an SSH key, run the following command from the Linux command-line:
 
