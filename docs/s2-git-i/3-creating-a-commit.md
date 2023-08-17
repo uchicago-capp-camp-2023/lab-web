@@ -45,7 +45,6 @@ git commit -m "Updated README.md"
 
 The text after the `-m` is a short message that describes the changes you have made since your last commit. Common examples of commit messages might be “Finished homework 1” or “Implemented insert function for data struct”.
 
-
 Once you run the above command, you will see something like the following output:
 
 ```
@@ -78,7 +77,7 @@ Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
 Writing objects: 100% (3/3), 279 bytes | 279.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
-To github.com:uchicago-capp-camp-2023/camp-1-GITHUB_USERNAME.git
+To github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
     392555e..0c85752  main -> main
 ```
 
