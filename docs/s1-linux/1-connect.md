@@ -80,20 +80,39 @@ However, VS Code works best when connected with a specific machine rather than t
 |P, Q, R, X, Y, Z|linux6.cs.uchicago.edu|
 |S, T, U, V, W|linux7.cs.uchicago.edu|
 
-Note your assigned server. Then run the following command in your open terminal and enter your UChicago password when prompted. Be sure to replace `<cnetId>` with your CnetID and `<linuxServer>` with your assigned Linux server name (see the table above).
+Note your assigned server. Then run the following command in your open terminal and enter your UChicago password if prompted. Be sure to replace `{cnetId}` with your CnetID and `{linuxServer}` with your assigned Linux server name (see the table above).
 
 _Windows_
 
 ```powershell
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh <cnetId>@<linuxServer> "cat >> .ssh/authorized_keys”
+$publicKeyPath = "$env:USERPROFILE\.ssh\id_rsa.pub"
+$remoteCommand = "{ mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys }"
+Get-Content $publicKeyPath | ssh {cnetId}@{linuxServer} $remoteCommand
 ```
 
 ![Authorize SSH keys screenshot - Windows](../assets/img/connect-remote-windows-5.png)
 
+To confirm that your key has been copied to the remote server successfully, log in using SSH and enter your UChicago password if prompted:
+
+```powershell
+ssh {cnetId}@{linuxServer}
+```
+
+![SSH into Linux server - Windows](../assets/img/connect-remote-windows-6.png)
+
+Then use the following command to display the contents of the `authorized_keys` file in the terminal. You should see your public key printed:
+
+```powershell
+cat ~/.ssh/authorized_keys
+```
+
+![SSH into Linux server - Windows](../assets/img/connect-remote-windows-7.png)
+
+
 _macOS_
 
 ```bash
-ssh-copy-id -i ~/.ssh/id_rsa <cnetId>@<linuxServer>
+ssh-copy-id -i ~/.ssh/id_rsa {cnetId}@{linuxServer}
 ```
 
 ![Authorize SSH keys screenshot - Mac](../assets/img/ssh-copy-id-mac.png)
@@ -111,13 +130,13 @@ Select "Remote-SSH: Open Configuration File" and then select the config file cre
 
 ![VS Code Remote SSH config option screenshot](../assets/img/connect-remote-vs-code-1.png)
 
-Add an entry resembling the following below, replacing <linuxServer> and <cnetId> with the appropriate values. Then save your changes.
+Add an entry resembling the following below, replacing {linuxServer} and {cnetId} with the appropriate values. Then save your changes.
 
 ```
 Host uchicago
-  HostName <linuxServerName>
+  HostName {linuxServerName}
   IdentityFile ~/.ssh/id_rsa
-  User <cnetId>
+  User {cnetId}
 ```
 
 ![VS Code SSH config screenshot ](../assets/img/connect-remote-vs-code-2.png)
