@@ -86,7 +86,9 @@ _Windows_
 
 ```powershell
 $publicKeyPath = "$env:USERPROFILE\.ssh\id_rsa.pub"
-$remoteCommand = "{ mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys }"
+$remoteCommand = "{
+    mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys
+}"
 Get-Content $publicKeyPath | ssh {cnetId}@{linuxServer} $remoteCommand
 ```
 
