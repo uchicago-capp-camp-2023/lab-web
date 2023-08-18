@@ -7,9 +7,9 @@ parent: Git II
 
 ## Exercises
 
- 1. As we did at the start of this lab, clone the repository `camp-2-GITHUB_USERNAME` in the `/tmp/USER/capp30121` directory that you have been working with throughout this lab. Be sure to use the SSH URL (beginning with `git@github.com:...`) to clone this repository.
+ 1. As we did at the start of this lab, clone the repository `git-ii-{GITHUB_USERNAME}` in the `/tmp/USER/capp30121` directory that you have been working with throughout this lab. Be sure to use the SSH URL (beginning with `git@github.com:...`) to clone this repository.
  
- 2. Generate a merge conflict in the `camp-2-GITHUB_USERNAME` repository. Edit `hello.py` in the home repository by changing `World!` to your name:
+ 2. Generate a merge conflict in the `git-ii-{GITHUB_USERNAME}` repository. Edit `hello.py` in the home repository by changing `World!` to your name:
     
     ```
     print("Hello, YOUR_NAME!")

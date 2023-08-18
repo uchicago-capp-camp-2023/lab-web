@@ -13,10 +13,10 @@ First, let’s add a file to your home repository. Use `pwd` to make sure you ar
 
 ```
 $ pwd
-/home/USER/capp30121/camp-1-GITHUB-USERNAME
+/home/{USER}/capp30121/git-i-{GITHUB_USERNAME}
 ```
 
-(USER will be your CNetID.) If the result of `pwd` starts with `/tmp` then you are in the wrong window and should switch to the correct one before proceeding.
+(`{USER}` should be your CNetID.) If the result of `pwd` starts with `/tmp` then you are in the wrong window and should switch to the correct one before proceeding.
 
 Now, in your home repository, create a file named `balloons.py` (`code balloons.py`) that contains these four lines of Python code:
 
@@ -39,7 +39,7 @@ to get it back in sync.
 
 ## Generating a Merge Conflict
 
-To create a merge conflict, we need to edit files in different and conflicting ways. In the temp copy of the repository, open `balloons.py` in the VSCode editor and replace both occurrences of `red` with `green` in `balloons.py`:
+To create a merge conflict, we need to edit files in different and conflicting ways. In the temp copy of the repository, open `balloons.py` in the VSCode editor and replace both occurrences of `red` with `green` in `balloons.py`, as below:
 
 ```
 print("Let's get started.")
@@ -61,7 +61,7 @@ print("All done.")
 
 Now, in your temp repository, commit and push `balloons.py` to GitHub.
 
-Switch back to the home copy of your repository (`/home/USER/capp30121/camp-1_YOUR_GITHUB_USERNAME`). The home copy is out of sync with the server and the temp copy, but do **not** pull from the server to sync them up just yet. Instead, change `red` to `blue` in `balloons.py`:
+Switch back to the home copy of your repository (`/home/USER/capp30121/git-i-{GITHUB_USERNAME}`). The home copy is out of sync with the server and the temp copy, but do **not** pull from the server to sync them up just yet. Instead, change `red` to `blue` in `balloons.py`:
 
 ```
 print("Let's get started.")
@@ -74,9 +74,9 @@ and then add and commit the file to this copy of your repository. If you try to 
 
 ```
 $ git push
-To https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USERNAME.git
+To https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
  ! [rejected]        main -> main (fetch first)
-error: failed to push some refs to 'https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USERNAME.git'
+error: failed to push some refs to 'https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
@@ -93,14 +93,14 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
 Unpacking objects: 100% (3/3), 343 bytes | 114.00 KiB/s, done.
-From https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USERNAME.git
+From https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
    4d2b54c..f4a73be  main       -> origin/main
 Auto-merging balloons.py
 CONFLICT (content): Merge conflict in balloons.py
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-Git recorded the conflicts in `balloons.py` and it is now our responsibility to resolve them before we proceed.
+Git recorded the conflicts in `balloons.py`, the conflicts being that one commit changes `red` to `green` and another commit changes `red` to `blue`. Git does not know how to merge these conflicting changes by itself. Should the ballons be `green` or `blue`? Because it cannot merge the two changes without negating one, git relies on us to resolve the conflict before we can continue updating the file further and committing those changes to our remote repository. We will walkthrough how to resolve the merge conflict below.
 
 ## Resolving a Merge Conflict
 
@@ -198,13 +198,13 @@ git commit
 which will open up an editor with a default commit message like:
 
 ```
-Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USER into main
+Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME} into main
 ```
 
 You could change this to something like `Merging (balloons should actually be red)` to indicate that you did not actually accept the changes from either version. For now you can leave it as it and just save the default commit message (`Ctrl+X`). Once you save the commit message, the merge will be completed and you will see something like this:
 
 ```
-[main 8e0f408] Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USER into main
+[main 8e0f408] Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME} into main
 ```
 
 That is the _merge commit_ for this merge; if you run `git log`, you will see that the commit history now includes the commit that you created in the temp repository (`f4a73bedf23e07daf75baa048defbca0d9ae72cb`) and the commit that you created in the home repository (`a92cbc869c282f8dbc78656469981c407962299f`), as well as the merge commit (`2fd85a9e7d4da0caf7fd97af18aacd40175f32d1`). Notice how the merge commit includes a `Merge:` line referencing the respective SHAs of the two commits that were merged:
@@ -216,7 +216,7 @@ Merge: a92cbc8 f4a73be
 Author: USER <USER_EMAIL>
 Date:   Sat Aug 6 12:38:20 2022 -0500
 
-    Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/camp-1-GITHUB-USER into main
+    Merge branch 'main' of https://github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME} into main
 
 commit a92cbc869c282f8dbc78656469981c407962299f
 Author: USER <USER_EMAIL>
