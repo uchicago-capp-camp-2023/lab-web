@@ -19,7 +19,7 @@ Before getting started, you should have the following tools installed, as detail
 
 ## Step 1. Generate SSH Private-Public Key Pair and Config File
 
-Open Windows PowerShell or macOS Terminal and change your current working directory to the ".ssh" folder using `cd ~/.ssh`.
+Open Windows PowerShell or macOS Terminal and change your current working directory to the `.ssh` folder using `cd ~/.ssh`.
 
 {: .warning }
 > In some cases, you might need to create the .ssh directory before you can change to the directory. You can do this with the `mkdir` command.
@@ -48,7 +48,7 @@ _macOS_
 
 ![SSH keygen screenshot - Mac](../assets/img/ssh-keygen-mac.png)
 
-Confirm that two new files, "id_rsa" and "id_rsa.pub", are present by listing the contents of the directory with `ls`. (Note: Because I have other files in the `.ssh` directory unrelated to the camp, I've used a wildcard, denoted by "*",  to only show those that begin with "id_rsa".)
+Confirm that two new files, `id_rsa` and `id_rsa.pub`, are present by listing the contents of the directory with `ls`. (Note: Because I have other files in the `.ssh` directory unrelated to the camp, I've used a wildcard, denoted by `*`,  to only show those that begin with "id_rsa".)
 
 _Windows_
 
@@ -80,7 +80,7 @@ However, VS Code works best when connected with a specific machine rather than t
 |P, Q, R, X, Y, Z|linux6.cs.uchicago.edu|
 |S, T, U, V, W|linux7.cs.uchicago.edu|
 
-Note your assigned server. Then run the following command in your open terminal and enter your UChicago password if prompted. Be sure to replace `{cnetId}` with your CnetID and `{linuxServer}` with your assigned Linux server name (see the table above).
+Note your assigned server. Then run the following commands for your operating system in your open terminal, entering your UChicago password if prompted. Be sure to replace `{cnetId}` with your CnetID and `{linuxServer}` with your assigned Linux server name (see the table above).
 
 _Windows_
 
@@ -132,11 +132,11 @@ Select "Remote-SSH: Open Configuration File" and then select the config file cre
 
 ![VS Code Remote SSH config option screenshot](../assets/img/connect-remote-vs-code-1.png)
 
-Add an entry resembling the following below, replacing {linuxServer} and {cnetId} with the appropriate values. Then save your changes.
+Add an entry resembling the following below, replacing `{linuxServer}` and `{cnetId}` with the appropriate values. Then save your changes.
 
 ```
 Host uchicago
-  HostName {linuxServerName}
+  HostName {linuxServer}
   IdentityFile ~/.ssh/id_rsa
   User {cnetId}
 ```

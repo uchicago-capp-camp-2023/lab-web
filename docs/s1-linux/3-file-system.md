@@ -41,7 +41,7 @@ username@computer:~$ pwd
 /home/username/
 username@computer:~$ ls
 cs  html
-username@computer:~$
+username@computer:~$ 
 ```
 
 Try these commands yourself to verify that everything looks similar.

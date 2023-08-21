@@ -53,10 +53,10 @@ Additional panels like terminals can be displayed below or to the side of the Ed
 
 On your personal computer, you probably navigate your hard drive by double clicking on icons. While convenient for simple tasks, this approach is limited. For example, imagine that you want to delete all of the music files over 5 MB that you haven’t listened to in over a year. This task is very hard to do with the standard double-click interface but is relatively simple using the terminal.
 
-To open a terminal in VS Code, go to the Menu Bar and select "Terminal > New Terminal" (or `Ctrl` followed by backtick `\`` as a shortcut). A terminal window will open at the bottom of the screen in the default Panels location, and you will see text of the form:
+To open a terminal in VS Code, go to the Menu Bar and select "Terminal > New Terminal" (or `Ctrl` followed by backtick `` ` `` as a shortcut). A terminal window will open at the bottom of the screen in the default Panels location, and you will see text of the form:
 
 ```bash
-username@computer:~$
+username@computer:~$ 
 ```
 
 where `username` has been replaced by your CNetID and `computer` is the name of the Linux server you happen to be using. This string is called the _prompt_. When you start typing, the characters you type will appear to the right of the `$`.
