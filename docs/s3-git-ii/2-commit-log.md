@@ -7,7 +7,7 @@ parent: Git II
 
 # Looking at the commit log
 
-Once you have made multiple commits, you can see these commits, their dates, commit messages, author, etc. by typing `git log`. This command will open a scrollable interface (using the up/down arrow keys) that shows every commit you have made so far in the repository. You can get out this interface by pressing the `q` key. As we saw earlier, you can also see the history of commits through GitHub’s web interface, but it is also useful to be able to access the commit log directly from the terminal, without having to open a browser.
+Once you have made multiple commits to a repository, you can view a log of those commits with their timestamps, commit messages, author, etc. by typing `git log` in your git repository. This command will open a scrollable interface (using the up/down arrow keys) that shows every commit you have made so far in the repository. You can get out this interface by pressing the `q` key. As we saw earlier, you can also see the history of commits through GitHub’s web interface, but it is also useful to be able to access the commit log directly from the terminal, without having to open a browser.
 
 Run the command `git log` from either the repository in your home directory (`/home/USER/capp30121/camp-1-YOUR_GITHUB_USERNAME`) or in the temp directory (`/tmp/USER/capp30121/camp-1-YOUR_GITHUB_USERNAME`). You should see output that looks something like this
 
@@ -40,10 +40,10 @@ Each commit has a _commit hash_ (usually referred to as the _commit SHA_) that l
 This is a unique identifier that we can use to refer to a commit elsewhere. For example, choose any commit from the commit log and run the following:
 
 ```
-git show COMMIT_SHA
+git show {COMMIT_SHA}
 ```
 
-Make sure to replace `COMMIT_SHA` with a commit SHA that appears in your commit log.
+Make sure to replace `{COMMIT_SHA}` with a commit SHA that appears in your commit log.
 
 This command will show you the changes that were included in that commit. The output of `git show` can be a bit hard to parse at first but the most important thing to take into account is that any line starting with a `+` denotes a line that was added, and any line starting with a `-` denotes a line that was removed. (Recall that this is the same formatting we saw when [using `git diff`](../s2-git-i/5-discarding-changes-unstaging.html) to show the pending changes to a file in the first Git lab.)
 

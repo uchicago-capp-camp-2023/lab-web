@@ -14,7 +14,7 @@ In the [first Git lab](../s2-git-i/index.html), you created a local repository i
 A common way of copying an existing repository from GitHub is by running the `git clone` command (**don’t run this command just yet**):
 
 ```
-git clone git@github.com:uchicago-capp-camp-2023/camp-1-YOUR_GITHUB_USERNAME.git
+git clone git@github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
 ```
 
 This Git command will create a local repository that “clones” the version of the repository that is currently stored on GitHub.
@@ -30,15 +30,15 @@ For the purposes of this lab, we’ll create this second copy in a separate dire
 > 
 > ![Screenshot of new terminal options in VS Code - MacOS](../assets/img/vs-code-new-terminal.png)
 
-Navigate to your `camp-1-YOUR_GITHUB_USERNAME` directory in one terminal window (recall that you can navigate to your home directory just by running `cd`) and run these commands in the second window:
+Navigate to your `git-i-{GITHUB_USERNAME}` directory in one terminal window (recall that you can navigate to your home directory just by running `cd`) and run these commands in the second window:
 
 ```
 mkdir -p /tmp/$USER/capp30121
 cd /tmp/$USER/capp30121
-git clone git@github.com:uchicago-capp-camp-2023/camp-1-YOUR_GITHUB_USERNAME.git
+git clone git@github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
 ```
 
-**Be sure** to replace YOUR_GITHUB_USERNAME with your actual GitHub username before running the `git clone` command. (FYI: `$USER` is a bash environment variable that is set automatically to your user name. Bash will replace `$USER` in the command with your CS login.)
+**Be sure** to replace `{GITHUB_USERNAME}` with your actual GitHub username before running the `git clone` command. (FYI: `$USER` is a bash environment variable that is set automatically to your user name. Bash will replace `$USER` in the command with your CS login.)
 
 Take into account that, when you run `git clone`, the repository is not cloned _into_ the current directory. Instead, a _new_ directory (with the same name as the repository) will be created in the current directory, and you will need to `cd` into it to use Git commands for that repository.
 
@@ -46,7 +46,7 @@ Take into account that, when you run `git clone`, the repository is not cloned _
 > When you are cloning a Git repository, you will need to supply a URL that tells Git where to find the repository that you want to copy on GitHub's servers. In the `git clone` command that you just ran above, this URL is
 > 
 > ```
-> git@github.com:uchicago-capp-camp-2023/camp-1-GITHUB_USERNAME.git
+> git@github.com:uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}.git
 > ```
 >
 > We use this specific URL because we have connected to GitHub using an SSH key (covered in the [first Git lab](../s2-git-i/1-getting-started.html#using-git-with-ssh)). However, there are other methods (i.e., HTTPS) that use slightly different URLs that you can reference to clone a repository. If you go to a repository on GitHub's website, you can find other URLs and the clone methods that they are used with by clicking on the green `Code` button at the top of the repository's home page.
@@ -55,11 +55,11 @@ Take into account that, when you run `git clone`, the repository is not cloned _
 
 ## Syncing Multiple Repositories with `git pull`
 
-You now have two local copies of the repository: one in your home directory (`/home/USER/capp30121/camp-1-YOUR_GITHUB_USERNAME`), which we will refer to as your _home_ repository for now and one in `/tmp` (`/tmp/$USER/capp30121/camp-1-YOUR_GITHUB_USERNAME`) which we will refer to as your _temp_ repository.
+You now have two local copies of the repository: one in your home directory (`/home/USER/capp30121/git-i-{GITHUB_USERNAME}`), which we will refer to as your _home_ repository for now and one in `/tmp` (`/tmp/$USER/capp30121/git-i-{GITHUB_USERNAME}`) which we will refer to as your _temp_ repository.
 
 To start, use one terminal to navigate to your home repository. Add a line to `test.txt` with the text `One more change!`. Create a commit for that change and push it to GitHub (you should know how to do this by now, but make sure to ask for help if you’re unsure of how to proceed). You don’t have to use any specific commit message (unlike previous steps where we gave you the exact message), but make sure your commit message is descriptive and to the point.
 
-Next, use the second terminal to navigate to your temp repository (`cd /tmp/$USER/capp30121/camp-1-YOUR_GITHUB_USERNAME`). Check if your latest change appears in the `test.txt` file using the `cat` command. It will not, because you have not yet downloaded the latest commits from the GitHub repository. You can do this by running this command:
+Next, use the second terminal to navigate to your temp repository (`cd /tmp/$USER/capp30121/git-i-{GITHUB_USERNAME}`). Check if your latest change appears in the `test.txt` file using the `cat` command. It will not, because you have not yet downloaded the latest commits from the GitHub repository. You can do this by running this command:
 
 ```
 git pull
@@ -73,7 +73,7 @@ remote: Counting objects: 100% (5/5), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), 312 bytes | 20.00 KiB/s, done.
-From github.com/uchicago-CAPP30121-aut-2021/camp-1-YOUR_GITHUB_USERNAME
+From github.com/uchicago-capp-camp-2023/git-i-{GITHUB_USERNAME}
    e3f9ef1..5716877  main       -> origin/main
 Updating e3f9ef1..5716877
 Fast-forward
@@ -105,7 +105,7 @@ Fast-forward
 > git config pull.rebase false
 > ```
 
-If you have multiple local repositories (e.g., one on a CS machine and one on your laptop), it is *very* important that you remember to run `git pull` before you start working, and that you `git push` any changes you make. Otherwise, your local repositories (and the repository on GitHub) may _diverge_ leading to a messy situation called a _merge conflict_ (we discuss conflicts in more detail below). This will be especially important once you start using Git for its intended purpose: to collaborate with multiple developers, where each developer will have their own local repository, and it will become easier for some developers’ code to diverge from others’.
+If you have multiple local repositories (e.g., one on a CS machine and one on your laptop), it is *very* important that you remember to run `git pull` before you start working, and that you `git push` any changes you make. Otherwise, your local repositories (and the repository on GitHub) may _diverge_ leading to a messy situation called a _merge conflict_ (we discuss conflicts in more detail later in the lab). This will be especially important once you start using Git for its intended purpose: to collaborate with multiple developers, where each developer will have their own local repository, and it will become easier for some developers’ code to diverge from others’.
 
 {:style="text-align:center"}
 [Previous](./index.html){: .btn } [Next](./2-commit-log.html){: .btn }
