@@ -113,11 +113,9 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
-{: .important}
+{: .warning}
 GIT I CHECKPOINT 2
-
 **Before going to the execises of the lab, stop here and navigate to Gradescope to take our short quiz to review the concepts that we have covered so far in the lab.**
-
 Link Here: https://www.gradescope.com/courses/570528/assignments
 
 {:style="text-align:center"}
