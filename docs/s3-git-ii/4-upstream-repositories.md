@@ -11,7 +11,7 @@ For each assignment in CAPP 30121, we provide some initial code that you must up
 
 To gain practice with this process, follow the steps below. These steps are similar to what you did at the beginning of the first Git lab with a couple of extra commands thrown in.
 
- 1. Using a browser, accept the `git-ii` assignment invitation on canvas: https://canvas.uchicago.edu/courses/50967/modules/items/2113119.
+ 1. Using a browser, accept the `git-ii` assignment invitation on canvas: https://classroom.github.com/a/JbftenWw.
 
  2. Navigate to your `/home/{USER}/capp30121` directory and creating a new directory named `git-ii-{GITHUB_USERNAME}` (where, as usual, `{GITHUB_USERNAME}` is replaced with your actual GitHub username).
 
@@ -53,6 +53,11 @@ If you are wondering, here is what these commands do (line-by-line):
 6.  `git push -u origin main`: Push the current commit to GitHub. The arguments `-u origin main` tell Git that you want to push from the local copy (`origin`) to the `main` branch on GitHub. Git will remember and reuse these parameters when you run `git push` from this copy of the repository in the future.
 
 From here on out, you can add, commit, pull, and push as usual to manage your repository. In the (hopefully) unlikely event that we need to fix a bug in the code that we provide, we’ll update the upstream repository and ask you to run `git pull upstream main`, to pull changes to the upstream code into your local copy.
+
+{: .warning}
+GIT II CHECKPOINT 2
+**Before going to the next section of the lab, stop here and navigate to Gradescope to take our short quiz to review the concepts that we have covered so far in the lab.**
+Link Here: https://www.gradescope.com/courses/570528/assignments
 
 {:style="text-align:center"}
 [Previous](./3-merge-conflicts.html){: .btn } [Next](./5-exercises.html){: .btn }
