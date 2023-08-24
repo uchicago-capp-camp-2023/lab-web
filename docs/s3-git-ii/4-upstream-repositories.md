@@ -11,7 +11,7 @@ For each assignment in CAPP 30121, we provide some initial code that you must up
 
 To gain practice with this process, follow the steps below. These steps are similar to what you did at the beginning of the first Git lab with a couple of extra commands thrown in.
 
- 1. Using a browser, accept the `git-ii` assignment invitation on canvas: https://classroom.github.com/a/JbftenWw.
+ 1. Using a browser, accept the `git-ii` assignment invitation on canvas: [https://classroom.github.com/a/JbftenWw](https://classroom.github.com/a/JbftenWw).
 
  2. Navigate to your `/home/{USER}/capp30121` directory and creating a new directory named `git-ii-{GITHUB_USERNAME}` (where, as usual, `{GITHUB_USERNAME}` is replaced with your actual GitHub username).
 
@@ -57,7 +57,7 @@ From here on out, you can add, commit, pull, and push as usual to manage your re
 {: .warning}
 GIT II CHECKPOINT 2
 **Before going to the next section of the lab, stop here and navigate to Gradescope to take our short quiz to review the concepts that we have covered so far in the lab.**
-Link Here: https://www.gradescope.com/courses/570528/assignments
+Link Here: [https://www.gradescope.com/courses/570528/assignments](https://www.gradescope.com/courses/570528/assignments)
 
 {:style="text-align:center"}
 [Previous](./3-merge-conflicts.html){: .btn } [Next](./5-exercises.html){: .btn }

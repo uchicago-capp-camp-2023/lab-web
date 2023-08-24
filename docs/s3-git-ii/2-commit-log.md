@@ -58,7 +58,7 @@ This command will show you the changes that were included in that commit. The ou
 {: .warning}
 GIT II CHECKPOINT 1
 **Before going to the next section of the lab, stop here and navigate to Gradescope to take our short quiz to review the concepts that we have covered so far in the lab.**
-Link Here: https://www.gradescope.com/courses/570528/assignments
+Link Here: [https://www.gradescope.com/courses/570528/assignments](https://www.gradescope.com/courses/570528/assignments)
 
 {:style="text-align:center"}
 [Previous](./1-working-from-multiple-locations.html){: .btn } [Next](./3-merge-conflicts.html){: .btn }
