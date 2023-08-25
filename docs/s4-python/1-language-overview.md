@@ -7,7 +7,7 @@ parent: Python Programming
 
 # A Brief Teaser
 
-Python, named after the 1970s BBC comedy show "Monty Python's Flying Circus", has its origins in the Netherlands. In 1987, Dutch scientist Guido van Rossum began developing the programming language as a side project at the national research institute CWI, eventually releasing it to the public in 1991. Since then, the language has gone through several versions (the latest stable version being 3.10.6) and exploded in popularity. The latest [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2022/#most-popular-technologies-language), conducted in May 2022 with over 70,000 respondents, reported that Python was the fourth most popular technology behind JavaScript, HTML/CSS, and SQL. The TIOBE Index, a monthly indicator of programming popularity, reported in [August 2022](https://www.tiobe.com/tiobe-index/) that Python was _the_ top language.
+Python, named after the 1970s BBC comedy show "Monty Python's Flying Circus", has its origins in the Netherlands. In 1987, Dutch scientist Guido van Rossum began developing the programming language as a side project at the national research institute CWI, eventually releasing it to the public in 1991. Since then, the language has gone through several versions (the latest stable release being 3.11.5) and exploded in popularity. The latest [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2023/#most-popular-technologies-language), conducted in May 2023 with over 90,000 respondents, reported that Python was the third most popular technology behind JavaScript and HTML/CSS. The TIOBE Index, a monthly indicator of programming popularity, reported in [August 2023](https://www.tiobe.com/tiobe-index/) that Python was _the_ top language.
 
 Your instructors for CAPP 30121 have chosen to use Python rather than another common language like Java, C, or C++ because it offers several advantages, such as greater readability. In addition, it is free, open-source, and general purpose; offers a rich and growing collection of libraries for data science and machine learning; and is currently used extensively within both academia and industry.
 
@@ -17,7 +17,7 @@ In this section, we will not attempt to teach Python. Rather, we will introduce 
 
 Your programming assignments will require you to edit Python files, which end in `.py`. These files will have a similar structure:
 
-**Docstring**.  At the very top of the file, you will find a docstring that starts and ends with a series of three quotation marks. When you run your Python program, the contents of the docstring will be ignored. Docstrings are used for informational purposes, such as conveying the name of the program, its author, and a brief description.
+**Docstring**.  At the very top of the file, you will find a docstring("documentation string") that starts and ends with a series of three quotation marks. When you run your Python program, the contents of the docstring will be ignored. Docstrings are used for informational purposes, such as conveying the name of the program, its author, and a brief description.
 
 ```
 '''
@@ -29,7 +29,7 @@ Functions for running a simple epidemiological simulation.
 '''
 ```
 
-**Imports**:  Below the doc string, you will often find a series of one-line statements beginning with the word `import`. The `import` keyword allows your Python program to access logic from another Python program. The Python language has a standard library of Python programs, called _modules_, that can be imported. For example, in the code snippet below, the `random` module is being imported so the "Epidemic modelling" program can call it to generate pseudo-random numbers.
+**Imports**:  Below the doc string, you will typically find a series of one-line statements beginning with the word `import`. The `import` keyword allows your Python program to access logic from other Python programs, called _modules_. The Python language offers a standard library of modules that can be imported. For example, in the code snippet below, the `random` module is being imported so the "Epidemic modelling" program can call it to generate pseudo-random numbers.
 
 ```
 '''
@@ -46,7 +46,7 @@ import click
 
 **Logic**:  After the `import` statements, the main logic of the program begins. You've already seen `print` commands in previous lessons. Printing "Hello, World!" to the terminal is a simple example of program logic.
 
-**Comments**: You will typically find single- and multi-line comments interspersed throughout Python files. A comment starts with the pound/hash symbol (`#`) and is followed by text that explains what an adjacent line of code is doing or why a design decision was made. The comment should add value--i.e., it should inform the reader of something that wasn't obvious from just looking at the code.
+**Comments**: You will typically find single- and multi-line comments interspersed throughout Python files. A comment starts with the pound symbol (`#`, also called the hash or octothorpe symbol) and is followed by text that explains what an adjacent line of code is doing or why a design decision was made. The comment should add value--i.e., it should inform the reader of something that wasn't obvious from just looking at the code.
 
 
 ## Example Data Types
@@ -113,7 +113,7 @@ When you attempted to divide by zero, Python raised an _exception_ called `ZeroD
 
 `float` represents numbers that have a decimal point. `3.45`, `-0.9`, and `2003.0` are all examples. The data type's name comes from the fact that its decimal point can "float" to wherever it's needed based on how the data is stored in computer memory. Unlike integers, floats have a maximum and minimum value defined by Python. There are also special values of positive or negative infinity that can be referenced using `float('inf')` and `float('-inf')`, respectively.
 
-Like `int` values, `float` values can be added (`+`), subtracted (`-`), multiplied (`*`), divided (`/`), and raised to a power (`**`). Here we should note that normal/true division always results in a `float`, regardless of whether the numbers you're dividing with are integers or floats. Test the following expressions in IPython3 to confirm. In this case, the function `type` returns the Python data type of the numerical expression after it is evaluated to a single number:
+Like `int` values, `float` values can be added (`+`), subtracted (`-`), multiplied (`*`), divided (`/`), and raised to a power (`**`). Here we should note that normal/true division always results in a `float`, regardless of whether the numbers you're dividing with are integers or floats. Test the following expressions using IPython3 to confirm. In this case, the function `type` returns the Python data type of the numerical expression after it is evaluated to a single number:
 
 ```python
 In [8]: 2 / 2
@@ -153,7 +153,7 @@ Out [13]: float
 > 
 > Computers store data within _bits_ of memory. Each bit can hold a value of 0 or 1. Therefore, we say that computers store numbers using a base-2, or _binary_, system because only two digits are available. By contrast, we write numbers in everyday life using a base-10 system in which 10 digits, 0 through 9, are used.
 >
-> Unfortunately, some numbers with decimals infinitely repeat when converted from base-10 to base-2. As a result, the computer has to truncate the number of digits to save memory, which leads to unexpected rounding errors. For example, try out the following expressions in IPython3:
+> Unfortunately, some numbers with decimals infinitely repeat when converted from base-10 to base-2. As a result, the computer has to truncate the number of digits to save memory, which leads to unexpected rounding errors. For example, try out the following expressions using IPython3:
 > 
 > ```
 > In [14]: 0.1 + 0.2
@@ -342,13 +342,12 @@ For example, if we wanted to write a function for our conditional block, it woul
 
 ```python
 def assess_rider_height(rider_height):
-    """
-    Prints a message to the terminal
+    """Prints a message to the terminal
     summarizing whether the given height
     permits the rider to go on 
     a roller coaster.
 
-    Inputs:
+    Args:
         rider_height (int): The rider
             height in inches.
 
@@ -368,13 +367,13 @@ def assess_rider_height(rider_height):
 
 And then we would call it later in our Python script like this, with some sample values:
 
-```
+```python
 assess_rider_height(20)
 assess_rider_height(68)
 assess_rider_height(90)
 ```
 
-A function starts with the keyword `def` followed by the function name (here, `assess_rider_height`) and a pair of parentheses.  Inside the parentheses, you can define what inputs are accepted. Here, `rider_height` is accepted. When you call function farther down the script with `assess_rider_height(20)`, the value `20` is passed in for the `rider_height`. Then the rest of the statements are evaluated and the correct `print` command is made.
+A function starts with the keyword `def` (for definition) followed by the function name (here, `assess_rider_height`) and a pair of parentheses.  Inside the parentheses, you can define what inputs are accepted. Here, `rider_height` is accepted. When you call function farther down the script with `assess_rider_height(20)`, the value `20` is passed in for the `rider_height`. Then the rest of the statements are evaluated and the correct `print` command is made.
 
 **Functions normally return a value using the `return` keyword.** In this case, the function doesn't explicitly return any value using the `return` keyword, so the `return` value is understood to be the special Python value `None`.
 
@@ -384,10 +383,9 @@ To provide a simple, second example:
 
 ```python
 def square(n):
-    """
-    Squares an integer.
+    """Squares an integer.
 
-    Inputs:
+    Args:
         n (int): The integer.
 
     Returns (int): The result.
@@ -399,7 +397,7 @@ print(square(3)) # Will print 9
 print(square(-4)) # Will print 16
 ```
 
-The above function is declared again using the keyword `def` and given the name `square`. ACcording to its docstring, `square` takes an integer `n` as input and then returns that integer raised to the second power. Here we see an explicit `return` statement that will return the integer result.
+The above function is declared again using the keyword `def` and given the name `square`. According to its docstring, `square` takes an integer `n` as input and then returns that integer raised to the second power. Here we see an explicit `return` statement that will return the integer result.
 
 #### Checkpoint
 

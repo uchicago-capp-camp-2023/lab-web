@@ -122,14 +122,14 @@ Within the function, you'll notice an `if` block. If `n < 0`, the Python program
 
 ```python
 def square_root(n):
-    """
-    Takes the square root of a positive integer
+    """Takes the square root of a positive integer
     and returns the positive result.
 
-    Inputs:
+    Args:
         n (int): The integer.
 
-    Returns (int): The result.
+    Returns (int):
+        The result.
     """
     if n < 0:
         raise ValueError("n must be a positive number.")
@@ -159,7 +159,7 @@ To permanently change the default number of spaces for Python files, you will ha
     }
 ```
 
-The CS Department has released its own [style guide](https://uchicago-cs.github.io/dev-guide/style_guide_python.html) for Python confirming use of four spaces per indentation level. If you want to change the indentation type for a Python file that has already been written using tabs, click on "Spaces" in the Status Bar and then the "Convert Indentation to Spaces" option.
+The CS Department has released its own [style guide](https://uchicago-cs.github.io/student-resource-guide/style-guide/python.html) for Python confirming use of four spaces per indentation level. If you want to change the indentation type for a Python file that has already been written using tabs, click on "Spaces" in the Status Bar and then the "Convert Indentation to Spaces" option.
 
 ### Linters
 
